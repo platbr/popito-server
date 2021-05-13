@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  filename: MyString
+  kind: 1
+  search: MyString
+  replace: MyString
+
+two:
+  filename: MyString
+  kind: 1
+  search: MyString
+  replace: MyString

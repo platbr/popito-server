@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  name: MyString
+  path: MyString
+  render: 1
+  data: 
+  template: one
+
+two:
+  type: 
+  name: MyString
+  path: MyString
+  render: 1
+  data: 
+  template: two

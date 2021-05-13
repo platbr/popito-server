@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner: one
+  owner_type: Owner
+  deploying_model: one
+  params: 
+
+two:
+  owner: two
+  owner_type: Owner
+  deploying_model: two
+  params: 
