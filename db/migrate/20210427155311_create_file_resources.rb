@@ -14,7 +14,7 @@ class CreateFileResources < ActiveRecord::Migration[6.1]
       t.string :newline, default: "\n", null: false
       t.json :required_params, default: [], null: false
       t.json :optional_params, default: [], null: false
-      t.binary :data
+      t.text :data
 
       t.timestamps
     end
