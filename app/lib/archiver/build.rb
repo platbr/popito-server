@@ -14,7 +14,7 @@ module Archiver
       @project.dockerfiles.or(@project.template.dockerfiles).order(:owner_priority).each do |dockerfile|
         data.add_image(context: @context, dockerfile: dockerfile)
       end
-      FileResource::Base.new(owner: @project.template, path: 'build.yaml', data: data.to_yaml)
+      FileResource::File.new(owner: @project.template, path: 'build.yaml', data: data.to_yaml)
     end
 
     def files_to_pack

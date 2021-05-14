@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module FileResource
-  class Fragment < FileResource::Base
+  class Fragment < FileResource::File
     include HasEmptyPath
   end
 end

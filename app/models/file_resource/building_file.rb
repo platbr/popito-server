@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module FileResource
-  class BuildingFile < FileResource::Base
+  class BuildingFile < FileResource::File
     validates :path, presence: true
   end
 end

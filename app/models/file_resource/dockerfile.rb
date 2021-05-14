@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module FileResource
-  class Dockerfile < FileResource::Base
+  class Dockerfile < FileResource::File
     validates :path, presence: true
     validates :label, presence: true
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module FileResource
-  class Base < ApplicationRecord
+  class File < ApplicationRecord
     self.table_name = :file_resources
 
     include CustomSanitizer
