@@ -8,7 +8,10 @@ module ValidateBuildConfig
   end
 
   def build_config_exclusive_keys
-    intersect = (build_config.keys & RenderContext::CLIENT_BUILD_CONFIG_EXCLUSIVE_KEYS)
+    existent_keys = build_config.keys if build_config.kind_of?(String)
+    existent_keys ||= build_config.keys
+    
+    intersect = (existent_keys & RenderContext::CLIENT_BUILD_CONFIG_EXCLUSIVE_KEYS)
     return if intersect.empty?
 
     errors.add(:build_config, "can't have #{intersect} keys defined on it.")

@@ -4,7 +4,7 @@ class CreateTemplates < ActiveRecord::Migration[6.1]
   def change
     create_table :templates do |t|
       t.integer :kind, null: false, default: 0
-      t.string :name, null: false, unique: true, index: true
+      t.string :name, null: false, index: true
       t.text :description
       t.json :build_config, null: false, default: {}
 

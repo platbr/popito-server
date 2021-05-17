@@ -57,4 +57,13 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
+gem 'pg'
 gem 'recursive-open-struct', '~> 1.1'
+gem 'devise'
+gem 'activeadmin'
+gem 'inherited_resources'
+gem 'activeadmin_json_editor'
+gem 'draper'
+gem 'active_admin_theme'
+gem 'active_admin-duplicatable', github: 'platbr/active_admin-duplicatable'
+gem 'amoeba'

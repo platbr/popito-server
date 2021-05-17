@@ -1,0 +1,2 @@
+class TemplateDecorator < OwnerDecorator
+end

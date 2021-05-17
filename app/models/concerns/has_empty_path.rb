@@ -9,8 +9,8 @@ module HasEmptyPath
   end
 
   def check_empty_path
-    return if path.nil?
+    return if path.blank?
   
-    errors.add(:path, "must to be nil for a #{self.class}")
+    errors.add(:path, "must to be blank for a #{self.class}")
   end
 end

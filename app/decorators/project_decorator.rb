@@ -1,0 +1,2 @@
+class ProjectDecorator < OwnerDecorator
+end

@@ -11,9 +11,7 @@ class CreateFileResources < ActiveRecord::Migration[6.1]
       t.string :path, index: true
       t.string :chmod, null: false, default: '0640'
       t.string :comments, default: "#", null: false
-      t.string :newline, default: "\n", null: false
-      t.json :required_params, default: [], null: false
-      t.json :optional_params, default: [], null: false
+      t.integer :newline, default: 0, null: false
       t.text :data
 
       t.timestamps
