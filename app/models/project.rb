@@ -21,7 +21,7 @@ class Project < ApplicationRecord
 
   amoeba do
     enable
-    prepend :name => "Copy of "
+    prepend name: "Copy of "
     include_association :environments
     include_association :file_patches
     include_association :deploying_resources
@@ -35,6 +35,7 @@ class Project < ApplicationRecord
   accepts_nested_attributes_for :environments, allow_destroy: true
 
   private
+
   def fill_token
     self.token = SecureRandom.uuid
   end

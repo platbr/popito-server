@@ -8,9 +8,9 @@ module ValidateBuildConfig
   end
 
   def build_config_exclusive_keys
-    existent_keys = build_config.keys if build_config.kind_of?(String)
+    existent_keys = build_config.keys if build_config.is_a?(String)
     existent_keys ||= build_config.keys
-    
+
     intersect = (existent_keys & RenderContext::CLIENT_BUILD_CONFIG_EXCLUSIVE_KEYS)
     return if intersect.empty?
 

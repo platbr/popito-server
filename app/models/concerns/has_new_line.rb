@@ -9,13 +9,6 @@ module HasNewLine
   end
 
   def newline_char
-    case newline
-    when 'LF'
-      return "\n"
-    when 'CRLF'
-      return "\r\n"
-    when 'CR'
-      return "\r"
-    end
+    { LF: "\n", CRLF: "\r\n", CR: "\r" }[newline.to_sym]
   end
 end

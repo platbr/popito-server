@@ -15,9 +15,5 @@ module FileResource
     def needs_owner?
       false
     end
-
-    def needs_owner?
-      false
-    end
   end
 end

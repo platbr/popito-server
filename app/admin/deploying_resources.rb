@@ -5,8 +5,8 @@ ActiveAdmin.register DeployingResource do
 
   filter :path_cont, label: 'Path'
   filter :deploying_model
-  filter :owner_of_Template_type_id_eq, as: :select, collection: Template.select(:id,:name), label: 'Template'
-  filter :owner_of_Project_type_id_eq, as: :select, collection: Project.select(:id,:name), label: 'Project'
+  filter :owner_of_Template_type_id_eq, as: :select, collection: Template.select(:id, :name), label: 'Template'
+  filter :owner_of_Project_type_id_eq, as: :select, collection: Project.select(:id, :name), label: 'Project'
 
   json_editor
 
@@ -19,7 +19,7 @@ ActiveAdmin.register DeployingResource do
       input :chmod
       input :params, as: :json
     end
-    
+
     f.actions
   end
 
@@ -31,5 +31,5 @@ ActiveAdmin.register DeployingResource do
     actions
   end
 
-  permit_params :owner_type, :owner_id, :deploying_model_id, :path, :chmod, :params  
+  permit_params :owner_type, :owner_id, :deploying_model_id, :path, :chmod, :params
 end

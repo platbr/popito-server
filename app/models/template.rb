@@ -19,7 +19,7 @@ class Template < ApplicationRecord
 
   amoeba do
     enable
-    prepend :name => "Copy of "
+    prepend name: "Copy of "
     include_association :file_patches
     include_association :deploying_resources
     include_association :fragments
@@ -28,5 +28,4 @@ class Template < ApplicationRecord
     include_association :dockerfiles
     include_association :deploying_files
   end
-
 end

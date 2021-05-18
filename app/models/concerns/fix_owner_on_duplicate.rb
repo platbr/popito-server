@@ -8,6 +8,6 @@ module FixOwnerOnDuplicate
   end
 
   def fix_owner_on_duplicate
-    self.owner_id ||= 0 if self.owner.present? && self.owner.id.nil?
+    self.owner_id ||= 0 if owner.present? && owner.id.nil?
   end
 end

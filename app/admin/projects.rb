@@ -18,7 +18,7 @@ ActiveAdmin.register Project do
       input :name
       input :label
       input :token
-      input :description 
+      input :description
       input :build_config, as: :json
     end
     f.inputs do
@@ -43,6 +43,5 @@ ActiveAdmin.register Project do
   end
 
   permit_params :name, :label, :description, :token, :build_config, :template_id,
-                environments_attributes: [:id, :label, :build_config, :_destroy]
-  
+                environments_attributes: %i[id label build_config _destroy]
 end

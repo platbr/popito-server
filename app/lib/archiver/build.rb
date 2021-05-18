@@ -33,7 +33,7 @@ module Archiver
 
             raise CustomError.new(
               status: 422,
-              message: "FilePatch id:#{file_patch.id} for #{path} is mandatory but it isn't present on included_files."
+              message: I18n.t('popito.failure.missing_included_file', path: path)
             )
           end
           patcher_class = Object.const_get("Patcher::#{file_patch.kind.camelcase}")

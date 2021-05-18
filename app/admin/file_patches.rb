@@ -6,8 +6,8 @@ ActiveAdmin.register FilePatch do
   filter :name_cont, label: 'Name'
   filter :path_cont, label: 'Path'
   filter :kind, as: :select, collection: FilePatch.kinds
-  filter :owner_of_Template_type_id_eq, as: :select, collection: Template.select(:id,:name), label: 'Template'
-  filter :owner_of_Project_type_id_eq, as: :select, collection: Project.select(:id,:name), label: 'Project'
+  filter :owner_of_Template_type_id_eq, as: :select, collection: Template.select(:id, :name), label: 'Template'
+  filter :owner_of_Project_type_id_eq, as: :select, collection: Project.select(:id, :name), label: 'Project'
 
   form do |f|
     f.semantic_errors
@@ -23,7 +23,7 @@ ActiveAdmin.register FilePatch do
       input :search_regex
       input :replace
     end
-    
+
     f.actions
   end
 
@@ -38,5 +38,6 @@ ActiveAdmin.register FilePatch do
     actions
   end
 
-  permit_params :owner_type, :owner_id, :name, :owner_priority, :order, :path, :kind, :optional, :newline_on_append, :newline, :search_regex, :replace
+  permit_params :owner_type, :owner_id, :name, :owner_priority, :order, :path, :kind, :optional, :newline_on_append, :newline,
+                :search_regex, :replace
 end

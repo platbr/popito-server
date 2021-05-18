@@ -9,8 +9,8 @@ module AdminFileConcern
       filter :label_or_path_cont, label: 'Label/Path'
       filter :data_cont, label: 'Content'
       filter :render_engine, as: :select, collection: FileResource::File.render_engines
-      filter :owner_of_Template_type_id_eq, as: :select, collection: Template.select(:id,:name), label: 'Template'
-      filter :owner_of_Project_type_id_eq, as: :select, collection: Project.select(:id,:name), label: 'Project'
+      filter :owner_of_Template_type_id_eq, as: :select, collection: Template.select(:id, :name), label: 'Template'
+      filter :owner_of_Project_type_id_eq, as: :select, collection: Project.select(:id, :name), label: 'Project'
 
       json_editor
 
@@ -39,9 +39,8 @@ module AdminFileConcern
         column :path if resource_object.needs_path?
         actions
       end
-    
-      permit_params :owner_type, :owner_id, :label, :render_engine, :path, :chmod, :comments_prefix, :newline, :data
 
+      permit_params :owner_type, :owner_id, :label, :render_engine, :path, :chmod, :comments_prefix, :newline, :data
     end
   end
 end

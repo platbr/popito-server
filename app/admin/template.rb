@@ -16,7 +16,7 @@ ActiveAdmin.register Template do
       input :description
       input :build_config, as: :json
     end
-    
+
     f.actions
   end
 
@@ -30,5 +30,4 @@ ActiveAdmin.register Template do
   end
 
   permit_params :name, :label, :kind, :description, :token, :build_config
-  
 end

@@ -12,7 +12,9 @@ module FileResource
 
     enum render_engine: { disabled: 0, erb: 1 }, _prefix: :render_engine
 
-    validate :validate_some_attributes
+    validate :validate_path
+    validate :validate_label
+    validate :validate_owner
     validates :data, presence: true
     validates :chmod, presence: true
     validates :comments_prefix, presence: true
@@ -25,7 +27,7 @@ module FileResource
 
       label
     end
-    
+
     amoeba do
       enable
     end
@@ -42,14 +44,19 @@ module FileResource
       raise NotImplementedError
     end
 
-    def validate_some_attributes
-      errors.add(:path, I18n.t('errors.messages.blank')) if path.blank? && needs_path?
-      errors.add(:label, I18n.t('errors.messages.blank')) if label.blank? && needs_label?
+    def validate_owner
       errors.add(:owner, I18n.t('errors.messages.blank')) if owner.blank? && needs_owner?
-
-      errors.add(:path, I18n.t('errors.messages.present')) if path.present? && !needs_path?
-      errors.add(:label, I18n.t('errors.messages.present')) if label.present? && !needs_label?
       errors.add(:owner, I18n.t('errors.messages.present')) if owner.present? && !needs_owner?
+    end
+
+    def validate_path
+      errors.add(:path, I18n.t('errors.messages.blank')) if path.blank? && needs_path?
+      errors.add(:path, I18n.t('errors.messages.present')) if path.present? && !needs_path?
+    end
+
+    def validate_label
+      errors.add(:label, I18n.t('errors.messages.blank')) if label.blank? && needs_label?
+      errors.add(:label, I18n.t('errors.messages.present')) if label.present? && !needs_label?
     end
   end
 end

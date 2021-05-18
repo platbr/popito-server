@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   def render_error(err)
     code = err.respond_to?(:code) ? (err.code || 0) : 0
     status = err.respond_to?(:status) ? (err.status || 500) : 500
-    render json: { code: code, message: err.message || 'An error has been occurred.' }, status: status
+    render json: { code: code, message: err.message || I18n.t('popito.failure.generic_error') }, status: status
     if status >= 500
       Rails.logger.error err.message
       Rails.logger.error err.backtrace.join("\n")

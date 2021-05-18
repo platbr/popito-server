@@ -9,7 +9,7 @@ module Api
         archiver.generate
         return send_data archiver.data, type: archiver.content_type, filename: archiver.filename if archiver.data
 
-        raise CustomError.new(status: 422, message: 'The archive was empty.')
+        raise CustomError.new(status: 422, message: I18n.t('popito.failure.empty_archive'))
       end
     end
   end

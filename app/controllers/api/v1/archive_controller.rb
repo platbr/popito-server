@@ -15,7 +15,7 @@ module Api
           render_archiver(archiver: Archiver::Deploy.new(project: current_project,
                                                          client_build_config: build_config_from_params))
         else
-          raise CustomError.new(status: 422, message: 'This stage param is not valid.')
+          raise CustomError.new(status: 422, message: I18n.t('popito.failure.invalid_stage'))
         end
       end
 

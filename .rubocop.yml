@@ -1,23 +1,30 @@
 Layout/LineLength:
-   Max: 130
+  Max: 130
+  Exclude:
+    - 'config/initializers/devise.rb'
 Metrics/CyclomaticComplexity:
-   Max: 8
+  Max: 8
 Style/FrozenStringLiteralComment:
-    Enabled: false
+  Enabled: false
 Style/StringLiterals:
-    Enabled: false
+  Enabled: false
 Style/Documentation:
-    Enabled: false
+  Enabled: false
 Metrics/AbcSize:
-    Max: 25
+  Max: 25
 Metrics/MethodLength:
-    Max: 20
+  Max: 20
 Metrics/ClassLength:
-    Max: 150
+  Max: 150
+Metrics/BlockLength:
+  Exclude:
+    - 'config/environments/development.rb'
+    - 'app/admin/*'
 AllCops:
   NewCops: enable
   Exclude:
     - 'bin/bundle'
     - 'db/schema.rb'
     - 'db/migrate/*'
+    - 'app/admin/concerns/*'
     - 'db/seeds.rb'

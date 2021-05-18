@@ -6,7 +6,7 @@ class ApiController < ApplicationController
   before_action :check_project
 
   def check_project
-    raise CustomError.new(status: 403, message: 'Invalid token.') if current_project.nil?
+    raise CustomError.new(status: 403, message: I18n.t('popito.failure.invalid_token')) if current_project.nil?
   end
 
   def current_project
@@ -16,8 +16,9 @@ class ApiController < ApplicationController
   end
 
   def check_client_version
+    # TODO: create a proper validation based on version range.
     return unless request.headers['X-Client-Version'].nil?
 
-    raise CustomError.new(status: 422, message: 'Your client version is not allowed, use a compatible version.')
+    raise CustomError.new(status: 422, message: I18n.t('popito.failure.incompatible_client'))
   end
 end

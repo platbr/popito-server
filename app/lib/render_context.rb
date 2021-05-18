@@ -13,13 +13,14 @@ class RenderContext
 
     if client_build_config['ENVIRONMENT'].blank?
       raise CustomError.new(status: 422,
-                            message: "The ENVIRONMENT must't to be provided.")
+                            message: I18n.t('popito.failure.empty_environment'))
     end
 
     @environment = project.environments.where(label: client_build_config['ENVIRONMENT']).take
     if @environment.nil?
       raise CustomError.new(status: 422,
-                            message: "The environment #{client_build_config['ENVIRONMENT']} does'nt exists.")
+                            message: I18n.t('popito.failure.invalid_environment',
+                                            environment: client_build_config['ENVIRONMENT']))
     end
 
     @client_build_config = client_build_config.deep_stringify_keys
@@ -124,7 +125,10 @@ class RenderContext
   def render_fragment(label:, global: false, params: nil, indent: nil, enable_comments: true)
     fragment = FileResource::Fragment.where(owner: nil, label: label).take if global
     fragment ||= @project.fragments.or(@project.template.fragments).where(label: label).order(:owner_priority).take
-    raise CustomError.new(status: 422, message: "Fragment #{label} hasn't been found.") if fragment.nil?
+    if fragment.nil?
+      raise CustomError.new(status: 422,
+                            message: I18n.t('popito.failure.invalid_fragment', fragment: label))
+    end
 
     self.params = params.deep_stringify_keys if params.present?
 
