@@ -20,7 +20,7 @@ class DeployingResource < ApplicationRecord
   private
 
   def comments
-    deploying_model.comments
+    deploying_model.comments_prefix
   end
 
   def newline_char

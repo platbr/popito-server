@@ -21,7 +21,7 @@ module FileRender
       end
       result = new_result
     end
-    result = "#{comments_head}#{newline}" + result + "#{newline}#{comments_tail}" if enable_comments
+    result = "#{comments_head}#{newline_char}" + result + "#{newline_char}#{comments_tail}" if enable_comments
     # puts result unless is_a?(FileResource::Fragment)
     result
   end

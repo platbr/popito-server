@@ -338,7 +338,10 @@ ActiveAdmin.setup do |config|
 
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
-      menu.add label: 'Files', priority: 9
+      menu.add label: 'Files', priority: 8
+    end
+    admin.build_menu do |menu|
+      menu.add label: 'Models', priority: 9
     end
   end
 

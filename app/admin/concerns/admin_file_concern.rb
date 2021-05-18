@@ -5,7 +5,6 @@ module AdminFileConcern
     dsl.instance_eval do
       duplicatable via: :save
       decorate_with FileResource::FileDecorator
-      menu parent: "Files"
 
       filter :label_or_path_cont, label: 'Label/Path'
       filter :data_cont, label: 'Content'
