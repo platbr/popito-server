@@ -35,7 +35,7 @@ module AdminFileConcern
         resource_object = resource_class.new
         selectable_column
         id_column
-        column :owner
+        column :owner if resource_object.needs_owner?
         column :label if resource_object.needs_label?
         column :path if resource_object.needs_path?
         actions
