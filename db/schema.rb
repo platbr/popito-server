@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2021_05_14_131239) do
     t.integer "render_engine", default: 0, null: false
     t.string "path"
     t.string "chmod", default: "0640", null: false
-    t.string "comments", default: "#", null: false
+    t.string "comments_prefix", default: "#", null: false
     t.integer "newline", default: 0, null: false
     t.text "data"
     t.datetime "created_at", precision: 6, null: false

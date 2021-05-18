@@ -2,9 +2,18 @@
 
 module FileResource
   class Dockerfile < FileResource::File
-    validates :path, presence: true
-    validates :label, presence: true
-    validates :owner_id, presence: true
+    def needs_label?
+      true
+    end
+
+    def needs_path?
+      true
+    end
+
+    def needs_owner?
+      true
+    end
+
     private
 
     def turn_on_comments

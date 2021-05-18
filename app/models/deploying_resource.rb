@@ -2,6 +2,7 @@ class DeployingResource < ApplicationRecord
   belongs_to :owner, polymorphic: true
   belongs_to :deploying_model, class_name: 'FileResource::DeployingModel'
   validates :path, presence: true
+  validates :chmod, presence: true
   alias_attribute :name, :label
 
   # TODO: organizar o codigo rem uma classe classe RenderComments
@@ -27,11 +28,11 @@ class DeployingResource < ApplicationRecord
   end
 
   def comments_head
-    "#{comments}begin - #{comments_info}"
+    "#{comments_prefix}begin - #{comments_info}"
   end
 
   def comments_tail
-    "#{comments}end - #{comments_info}"
+    "#{comments_prefix}end - #{comments_info}"
   end
 
   def comments_info

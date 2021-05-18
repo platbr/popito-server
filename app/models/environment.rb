@@ -4,6 +4,8 @@ class Environment < ApplicationRecord
   
   alias_attribute :name, :label
 
+  validates :label, presence: true
+
   amoeba do
     enable
   end

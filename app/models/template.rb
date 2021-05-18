@@ -15,6 +15,7 @@ class Template < ApplicationRecord
   has_many :deploying_files, class_name: 'FileResource::DeployingFile', as: :owner, dependent: :destroy
 
   validates_uniqueness_of :name
+  validates :name, presence: true
 
   amoeba do
     enable
@@ -28,5 +29,4 @@ class Template < ApplicationRecord
     include_association :deploying_files
   end
 
-  accepts_nested_attributes_for :file_patches, :deploying_resources, :fragments, :project_files, :building_files, :dockerfiles, :deploying_files
 end

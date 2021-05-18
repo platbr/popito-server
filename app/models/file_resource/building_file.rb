@@ -2,7 +2,16 @@
 
 module FileResource
   class BuildingFile < FileResource::File
-    validates :path, presence: true
-    validates :owner_id, presence: true
+    def needs_label?
+      false
+    end
+
+    def needs_path?
+      true
+    end
+
+    def needs_owner?
+      true
+    end
   end
 end

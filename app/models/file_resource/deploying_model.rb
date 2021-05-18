@@ -2,8 +2,22 @@
 
 module FileResource
   class DeployingModel < FileResource::File
-    include HasEmptyPath
     has_many :deploying_resources
-    validates :owner_id, inclusion: { in: [nil], message: 'must be blank'}
+
+    def needs_label?
+      true
+    end
+
+    def needs_path?
+      false
+    end
+
+    def needs_owner?
+      false
+    end
+
+    def needs_owner?
+      false
+    end
   end
 end

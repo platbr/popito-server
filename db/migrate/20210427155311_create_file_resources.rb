@@ -10,7 +10,7 @@ class CreateFileResources < ActiveRecord::Migration[6.1]
       t.integer :render_engine, null: false, default: 0
       t.string :path, index: true
       t.string :chmod, null: false, default: '0640'
-      t.string :comments, default: "#", null: false
+      t.string :comments_prefix, default: "#", null: false
       t.integer :newline, default: 0, null: false
       t.text :data
 

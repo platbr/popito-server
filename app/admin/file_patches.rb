@@ -38,5 +38,5 @@ ActiveAdmin.register FilePatch do
     actions
   end
 
-  permit_params :owner_type, :owner_id, :name, :owner_priority, :order, :path, :kind, :optional, :newline_on_append, :newline, :search, :replace
+  permit_params :owner_type, :owner_id, :name, :owner_priority, :order, :path, :kind, :optional, :newline_on_append, :newline, :search_regex, :replace
 end

@@ -2,7 +2,16 @@
 
 module FileResource
   class Fragment < FileResource::File
-    include HasEmptyPath
-    validates :owner_id, inclusion: { in: [nil], message: 'must be blank'}
+    def needs_label?
+      true
+    end
+
+    def needs_path?
+      false
+    end
+
+    def needs_owner?
+      false
+    end
   end
 end

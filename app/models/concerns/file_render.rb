@@ -34,11 +34,11 @@ module FileRender
   end
 
   def comments_head
-    "#{comments}begin - #{comments_info}"
+    "#{comments_prefix}begin - #{comments_info}"
   end
 
   def comments_tail
-    "#{comments}end - #{comments_info}"
+    "#{comments_prefix}end - #{comments_info}"
   end
 
   def comments_info

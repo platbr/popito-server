@@ -12,9 +12,12 @@ class Project < ApplicationRecord
   has_many :dockerfiles, class_name: 'FileResource::Dockerfile', as: :owner, dependent: :destroy
   has_many :deploying_files, class_name: 'FileResource::DeployingFile', as: :owner, dependent: :destroy
 
-  accepts_nested_attributes_for :environments
-
   validates_uniqueness_of :name
+  validates :name, presence: true
+  validates :label, presence: true
+  validates :token, presence: true
+
+  before_validation :fill_token, if: proc { token.blank? }
 
   amoeba do
     enable
@@ -29,5 +32,10 @@ class Project < ApplicationRecord
     include_association :deploying_files
   end
 
-    accepts_nested_attributes_for :environments, :file_patches, :deploying_resources, :fragments, :project_files, :building_files, :dockerfiles, :deploying_files
+  accepts_nested_attributes_for :environments, allow_destroy: true
+
+  private
+  def fill_token
+    self.token = SecureRandom.uuid
+  end
 end
