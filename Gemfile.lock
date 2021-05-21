@@ -6,8 +6,9 @@ GIT
       activeadmin
       amoeba (>= 2.0.0)
 
-PATH
-  remote: /Users/wagner/workspace/outros/activeadmin_json_editor
+GIT
+  remote: https://github.com/platbr/activeadmin_json_editor.git
+  revision: 656fae822ea9d055ca818d577a33f2b76c1480d3
   specs:
     activeadmin_json_editor (0.0.9)
       ace-rails-ap
@@ -55,6 +56,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_admin-exportable (0.1.0)
+      activeadmin
     active_admin_theme (1.1.4)
     activeadmin (2.9.0)
       arbre (~> 1.2, >= 1.2.1)
@@ -291,6 +294,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_admin-duplicatable!
+  active_admin-exportable (~> 0.1.0)
   active_admin_theme
   activeadmin
   activeadmin_json_editor!

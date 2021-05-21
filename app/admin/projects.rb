@@ -1,6 +1,7 @@
 ActiveAdmin.register Project do
   decorate_with ProjectDecorator
   duplicatable via: :save
+  exportable includes: [:template, :environments, :file_patches, :fragments, :project_files, :building_files, :dockerfiles, :deploying_files, {deploying_resources: :deploying_model}], format: :json
   menu priority: 2
 
   filter :name_cont, label: 'Name'

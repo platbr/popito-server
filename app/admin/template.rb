@@ -1,6 +1,10 @@
 ActiveAdmin.register Template do
   decorate_with TemplateDecorator
   duplicatable via: :save
+
+  exportable includes: [:file_patches, :fragments, :project_files, :building_files, :dockerfiles, :deploying_files, {deploying_resources: :deploying_model}],
+             format: :json
+
   menu priority: 1
 
   filter :name_cont, label: 'Name'

@@ -59,7 +59,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'activeadmin'
 gem 'active_admin-duplicatable', github: 'platbr/active_admin-duplicatable'
-gem 'activeadmin_json_editor', path: '/Users/wagner/workspace/outros/activeadmin_json_editor'
+gem 'active_admin-exportable', '~> 0.1.0'
+gem 'activeadmin_json_editor', github: 'platbr/activeadmin_json_editor'
 gem 'active_admin_theme'
 gem 'amoeba'
 gem 'devise'
@@ -67,3 +68,4 @@ gem 'draper'
 gem 'inherited_resources'
 gem 'pg'
 gem 'recursive-open-struct', '~> 1.1'
+

@@ -2,7 +2,7 @@
 
 module FileResource
   class DeployingModel < FileResource::File
-    has_many :deploying_resources
+    has_many :deploying_resources, dependent: :restrict_with_error
 
     def needs_label?
       true
@@ -14,6 +14,10 @@ module FileResource
 
     def needs_owner?
       false
+    end
+
+    def self.exportable_search_attributes
+      [:label]
     end
   end
 end

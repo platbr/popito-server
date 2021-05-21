@@ -13,5 +13,9 @@ module FileResource
     def needs_owner?
       false
     end
+
+    def exportable_search_attributes
+      [:label]
+    end
   end
 end

@@ -28,4 +28,12 @@ class Template < ApplicationRecord
     include_association :dockerfiles
     include_association :deploying_files
   end
+
+  def exportable_filename
+    "template_#{name}_#{Time.now.to_s}".parameterize
+  end
+
+  # def self.exportable_search_attributes
+  #   [:name]
+  # end
 end
