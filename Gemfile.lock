@@ -56,7 +56,7 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    active_admin-exportable (0.1.0)
+    active_admin-exportable (0.2.0)
       activeadmin
     active_admin_theme (1.1.4)
     activeadmin (2.9.0)
@@ -294,7 +294,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_admin-duplicatable!
-  active_admin-exportable (~> 0.1.0)
+  active_admin-exportable (~> 0.2.0)
   active_admin_theme
   activeadmin
   activeadmin_json_editor!
