@@ -59,7 +59,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'activeadmin'
 gem 'active_admin-duplicatable', github: 'platbr/active_admin-duplicatable'
-gem 'active_admin-exportable', '~> 0.2.0'
+gem 'active_admin-exportable', '~> 0.3.0'
 gem 'activeadmin_json_editor', github: 'platbr/activeadmin_json_editor'
 gem 'active_admin_theme'
 gem 'amoeba'
